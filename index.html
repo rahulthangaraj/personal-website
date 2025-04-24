@@ -36,36 +36,69 @@
             },
             particles: {
                 number: {
-                    value: 70
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#000000"
                 },
                 shape: {
                     type: "circle"
                 },
-                size: {
-                    value: { min: 1, max: 2 }
-                },
                 opacity: {
-                    value: 0.4
+                    value: 0.5,
+                    random: true
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#000000",
+                    opacity: 0.4,
+                    width: 1
                 },
                 move: {
                     enable: true,
-                    speed: 0.15
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
                 }
             },
             interactivity: {
+                detect_on: "canvas",
                 events: {
-                    onHover: {
+                    onhover: {
                         enable: true,
-                        mode: "repulse"
-                    }
+                        mode: "grab"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
                 },
                 modes: {
-                    repulse: {
-                        distance: 100,
-                        duration: 0.4
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    push: {
+                        particles_nb: 4
                     }
                 }
-            }
+            },
+            retina_detect: true
         });
     </script>
 </body>
